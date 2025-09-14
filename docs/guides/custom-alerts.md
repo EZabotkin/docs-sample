@@ -82,7 +82,7 @@ For larger environments, reduce noise and increase relevance using these options
 
    Combine multiple metrics in one rule, such as:
 
-   CPU > 85% AND Memory > 80% for 5 minutes. 
+   **CPU > 85% AND Memory > 80% for 5 minutes.** 
 
    This cuts false positives when a single metric briefly spikes.
 

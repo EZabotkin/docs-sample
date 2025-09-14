@@ -57,7 +57,7 @@ Invoke-RestMethod "$env:API_BASE/v1/users" -Headers @{
 }
 ```
 
-## Create User
+## Create a User
 
 This request allows you to create a new user in the system.
 
