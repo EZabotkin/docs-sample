@@ -1,3 +1,9 @@
+---
+version: 1.0.0
+last_updated: 2025-09-14
+author: Evgenii Zabotkin
+---
+
 # User API Reference
 
 ## General
