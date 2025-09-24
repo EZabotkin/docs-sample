@@ -14,11 +14,19 @@ theme:
 plugins:
   - search
   - i18n:
-      default_language: en
+      docs_structure: suffix
+      reconfigure_material: true
       languages:
-        en: English
-        de: Deutsch
-      docs_structure: suffix  # getting-started.md + getting-started.de.md
+        - locale: en
+          name: English
+          default: true
+        - locale: de
+          name: Deutsch
+          nav:
+            - Startseite: index.md
+            - Anleitungen:
+                - Erste Schritte: guides/getting-started.md
+
 markdown_extensions:
   - admonition
   - toc:
@@ -27,11 +35,15 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
-
+  - pymdownx.snippets:
+      check_paths: true
+      base_path:
+        - .
 nav:
+  - Home: index.md
   - Guides:
-      - Getting started: docs/guides/getting-started.md
-      - Quickstart: docs/guides/quickstart.md
-      - Custom alerts: docs/guides/custom-alerts.md
+      - Getting started: guides/getting-started.md
+      - Quickstart: guides/quickstart.md
+      - Custom alerts: guides/custom-alerts.md
   - Reference:
-      - Users API: docs/reference/users.md
+      - Users API: reference/users.md

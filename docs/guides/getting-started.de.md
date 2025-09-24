@@ -94,16 +94,15 @@ Invoke-RestMethod "$env:API_BASE/v1/users" -Method POST -Headers @{
 - **409:** Die E-Mail-Adresse existiert bereits beim Erstellen.
 - **500:** Serverfehler.
 
-> NOTE
-> 
-> Translation Decision: "Location" Header
->
-> In the section about creating a user, I kept the English term **"Location"**. The literal German translation would be **"Standort"** or **"Ort"**, but I deliberately kept "Location" in English because:
->
-> 1. **Technical Standard**: "Location" is an HTTP response header defined in RFC specifications. In technical contexts, HTTP headers are universally referred to by their English names, even in non-English documentation.
->
-> 2. **Avoiding Confusion**: Using "Standort: /v1/users/{id}" would be confusing for developers, as they need to actually use `Location:` in their code, not a translated version.
->
-> 3. **Industry Practice**: German developers expect to see HTTP headers, status codes, and similar protocol-level elements in English. This is a standard practice in German technical documentation.
->
-> This approach maintains technical accuracy while keeping the explanatory text in proper German, striking the right balance for technical documentation.
+!!! note "NOTE"
+    Translation Decision: "Location" Header
+    
+    In the section about creating a user, I kept the English term **"Location"**. The literal German translation would be **"Standort"** or **"Ort"**, but I deliberately kept "Location" in English because:
+    
+    1. **Technical Standard**: "Location" is an HTTP response header defined in RFC specifications. In technical contexts, HTTP headers are universally referred to by their English names, even in non-English documentation.
+    
+    2. **Avoiding Confusion**: Using "Standort: /v1/users/{id}" would be confusing for developers, as they need to actually use `Location:` in their code, not a translated version.
+    
+    3. **Industry Practice**: German developers expect to see HTTP headers, status codes, and similar protocol-level elements in English. This is a standard practice in German technical documentation.
+    
+    This approach maintains technical accuracy while keeping the explanatory text in proper German, striking the right balance for technical documentation.
