@@ -1,7 +1,7 @@
 name: Vale (prose lint)
 on:
   pull_request:
-    paths: ["docs/**/*.md", ".vale.ini", "styles/**"]
+    paths: ["docs/**", ".vale.ini", "styles/**"]
 
 jobs:
   vale:
@@ -10,5 +10,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: errata-ai/vale-action@v2
         with:
-          files: "docs/**/*.md"
+          files: docs
+          vale_flags: --glob=**/*.md
           fail_on_error: true
