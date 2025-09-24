@@ -1,0 +1,14 @@
+name: Vale (prose lint)
+on:
+  pull_request:
+    paths: ["docs/**/*.md", ".vale.ini", "styles/**"]
+
+jobs:
+  vale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: errata-ai/vale-action@v2
+        with:
+          files: "docs/**/*.md"
+          fail_on_error: true

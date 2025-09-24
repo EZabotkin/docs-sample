@@ -1,0 +1,37 @@
+site_name: IONOS Docs Assignment
+site_url: https://ezabotkin.github.io/docs-sample/
+repo_url: https://github.com/EZabotkin/docs-sample
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - i18n:
+      default_language: en
+      languages:
+        en: English
+        de: Deutsch
+      docs_structure: suffix  # getting-started.md + getting-started.de.md
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+nav:
+  - Guides:
+      - Getting started: docs/guides/getting-started.md
+      - Quickstart: docs/guides/quickstart.md
+      - Custom alerts: docs/guides/custom-alerts.md
+  - Reference:
+      - Users API: docs/reference/users.md
