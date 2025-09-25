@@ -1,6 +1,7 @@
 site_name: IONOS Docs Assignment
 site_url: https://ezabotkin.github.io/docs-sample/
 repo_url: https://github.com/EZabotkin/docs-sample
+edit_uri: edit/main/docs/
 
 theme:
   name: material
