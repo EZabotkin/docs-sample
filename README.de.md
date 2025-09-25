@@ -1,11 +1,88 @@
-# IONOS Docs Assignment
+# Dokumentationswebsite lokal installieren, bauen und in der Vorschau anzeigen
 
-Dieses Repository enthält die Dokumentation zu einer Take-Home-Aufgabe von IONOS.
+Dieses Repository enthält die Konfiguration für  Dokumentation zu einer Take-Home-Aufgabe von IONOS.
 
-Das Repository enthält die folgenden Dokumente:
+## Voraussetzungen
 
-* [Getting Started: Authenticate and Make Your First API Requests](docs/guides/getting-started.md) — eine einfache Schritt-für-Schritt-Anleitung für die ersten API-Anfragen.
-* [Erste Schritte: Authentifizieren und Ihre ersten API-Anfragen senden](docs/guides/getting-started.de.md) — dieselbe Getting-Started-Anleitung in deutscher Übersetzung.
-* [User API Quick Start Guide](docs/guides/quickstart.md) — der überarbeitete Text als kompakter Quick-Start-Leitfaden für Einsteiger.
-* [Custom Alerts](docs/guides/custom-alerts.md) — ein Benutzerhandbuch zur Funktion „Custom Alerts“, das die Funktionalität für Einsteiger und Fortgeschrittene beschreibt.
-* [User API Reference](docs/reference/users.md) — Referenzdokumentation zur User API mit Beschreibung der API-Spezifikation sowie möglichen Verbesserungen, um die bereitgestellte Spezifikation konsistent und funktionsfähig zu machen.
+- Python 3.10+ und `pip`.
+- Installierte MkDocs. Bitte beachten Sie [MkDocs Installation Guide](https://www.mkdocs.org/user-guide/installation/#installing-mkdocs) zur Installation von MkDocs.
+- Git.
+- (optional) ein Terminal mit UTF-8-Unterstützung.
+
+!!! tip "Tipp"
+    Verwenden Sie eine virtuelle Umgebung, damit Ihre globale Python-Installation sauber bleibt.
+
+    Nutzen Sie die folgenden Befehle, um eine virtuelle Umgebung zu erstellen und zu aktivieren:
+
+    - **macOS/Linux**
+  
+        ```bash
+        python -m venv .venv
+        source .venv/bin/activate
+        ```
+
+    - **Windows (PowerShell)**
+  
+        ```bash
+        py -m venv .venv
+        .venv\Scripts\Activate.ps1
+        ```
+
+## Website lokal in der Vorschau anzeigen
+
+Um die Website lokal in der Vorschau anzuzeigen:
+
+1. **Abhängigkeiten installieren**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. **Lokalen Vorschau-Server starten**
+
+    ```bash
+    python -m mkdocs serve
+    ```
+
+    !!! info "Wichtig"
+        Die Website lädt automatisch neu, sobald Sie eine Datei ändern.
+
+3. Öffnen Sie die im Terminal ausgegebene URL (meist <http://127.0.0.1:8000>).
+
+## Dokumentation bauen
+
+Verwenden Sie den folgenden Befehl, um die Website zu bauen:
+
+```bash
+python -m mkdocs build
+````
+
+!!! tip "Tipp"
+Verwenden Sie die Option `--strict`, um den Build bei defekten Links oder Konfigurationsproblemen fehlschlagen zu lassen.
+
+Die statische Website wird im Verzeichnis `./site` erzeugt.
+
+## Hinweise zu i18n (EN/DE)
+
+- Seiten mit der Endung `.de.md` werden auf Deutsch angezeigt.
+- Um in der deutschen Version nicht übersetzte Seiten auszublenden, setzen Sie `fallback_to_default: false` in `mkdocs.yml`.
+
+## Fehlerbehebung
+
+- `Unrecognised theme name: 'material'` → Installieren Sie das Theme in der virtuellen Umgebung:
+
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+  Führen Sie anschließend `python -m mkdocs serve` erneut aus.
+
+- `mkdocs not found` → Verwenden Sie `python -m mkdocs serve` (Windows: `py -m mkdocs serve`).
+
+- `Port in use` → Adresse und Port explizit angeben:
+
+  ```bash
+  python -m mkdocs serve -a 127.0.0.1:8001
+  ```
+
+- **Build schlägt aufgrund der i18n-Konfiguration fehl** → Stellen Sie sicher, dass `plugins.i18n.languages` eine Liste ist (siehe `mkdocs.yml`), kein Dict.
