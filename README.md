@@ -9,7 +9,7 @@ This repository contains the docs site configuration and documentation samples f
 ### Prerequisites
 
 - Python 3.10+ and `pip`
-- MkDocs static site generation installed. For more information on how to install MkDocs, please, refer to [MkDocs Installation Guide](https://www.mkdocs.org/user-guide/installation/#installing-mkdocs).
+- MkDocs static site generator installed. For more information on how to install MkDocs, please, refer to [MkDocs Installation Guide](https://www.mkdocs.org/user-guide/installation/#installing-mkdocs).
 - Git
 - (optional) a terminal with UTF-8 support
 
