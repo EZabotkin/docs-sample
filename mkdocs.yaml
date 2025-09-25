@@ -31,6 +31,8 @@ plugins:
   - i18n:
       docs_structure: suffix
       reconfigure_material: true
+  - git-revision-date-localized:
+      fallback_to_build_date: true
       languages:
         - locale: en
           name: English
