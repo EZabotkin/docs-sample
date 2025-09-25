@@ -11,5 +11,4 @@ jobs:
       - uses: errata-ai/vale-action@v2
         with:
           files: docs
-          vale_flags: --glob='!**/*.de.md **/*.md'
           fail_on_error: true
